@@ -1,0 +1,64 @@
+if game.PlaceId == 13780662126 then
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "BaconBoss | [👑 FREE UGC] Yeet a Plane Simulator!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+_G.farm = true
+_G.rb = true
+_G.egg = true
+
+
+function farm()
+      while _G.farm == true do
+      game:GetService("ReplicatedStorage").Remotes.ThrowPlane:FireServer(Vector3.new(-425.31304931640625, 100.56306457519531, 108.01872253417969),100000000000000000000000000000000000000000000000000000000000000)
+     wait(0.000000000000001)
+    end
+end
+
+function rb()
+     while _G.rb == true do
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer()
+        wait(0.000000001)
+    end
+end
+
+function egg()
+     while _G.egg == true do
+      game:GetService("ReplicatedStorage").Remotes.HatchEgg:InvokeServer("Angel Egg",1)
+     wait(0.000000000000001)
+    end
+end
+
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+MainTab:AddToggle({
+	Name = "Inf Cash",
+	Default = false,
+	Callback = function(Value)
+		_G.farm = Value
+        farm()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Auto Rebirth",
+	Default = false,
+	Callback = function(Value)
+		_G.rb = Value
+        rb()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Auto Hatch Best Egg | Unlock The Last World First",
+	Default = false,
+	Callback = function(Value)
+		_G.egg = Value
+        egg()
+	end    
+})
+
+end
