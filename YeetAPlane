@@ -42,7 +42,7 @@ end
 
 function up2()
 	while _G.up2 == true do
-	 game:GetService("ReplicatedStorage").Remotes.Upgrade:FireServer("Accuraty")
+	 game:GetService("ReplicatedStorage").Remotes.Upgrade:FireServer("Accuracy")
      wait(0.000000000000001)
    end
 end
@@ -111,7 +111,7 @@ UpTab:AddToggle({
 })
 
 UpTab:AddToggle({
-	Name = "Auto Upgrade Accuraty",
+	Name = "Auto Upgrade Accuracy",
 	Default = false,
 	Callback = function(Value)
 		_G.up2 = Value
