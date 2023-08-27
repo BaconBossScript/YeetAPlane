@@ -131,10 +131,13 @@ UpTab:AddToggle({
 EggTab:AddDropdown({
 	Name = "Select",
 	Default = "Common Egg",
-	Options = {"Common Egg", "Desert Egg", "Iced Egg", "Tropical Egg", "Mush Egg", "Candy Egg", "Airport Egg", "Ocean Egg", "Magma Egg", "Bouncy Egg", "Stone Egg", "Angel Egg",},
+	Options = {"Common Egg", "Desert Egg", "Iced Egg", "Tropical Egg", "Mush Egg", "Candy Egg", "Airport Egg", "Ocean Egg", "Magma Egg", "Bouncy Egg", "Stone Egg", "Angel Egg"},
 	Callback = function(Value)
 		_G.segg = Value
 	end    
 })
+
+EggTab:AddLabel("Note: Unlock World Before You Hatch Egg In That World")
+
 
 end
