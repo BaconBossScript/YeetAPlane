@@ -5,6 +5,10 @@ local Window = OrionLib:MakeWindow({Name = "BaconBoss | [👑 FREE UGC] Yeet a P
 _G.farm = true
 _G.rb = true
 _G.egg = true
+_G.segg = "Common Egg"
+_G.up1 = true
+_G.up2 = true
+_G.up3 = true
 
 
 function farm()
@@ -22,11 +26,34 @@ function rb()
 end
 
 function egg()
-     while _G.egg == true do
-      game:GetService("ReplicatedStorage").Remotes.HatchEgg:InvokeServer("Angel Egg",1)
-     wait(0.000000000000001)
-    end
+	while _G.egg == true do
+	 game:GetService("ReplicatedStorage").Remotes.HatchEgg:InvokeServer(_G.segg,1)
+	wait(0.000000000000001)
+   end
 end
+
+
+function up1()
+	while _G.up1 == true do
+	 game:GetService("ReplicatedStorage").Remotes.Upgrade:FireServer("Strength")
+     wait(0.000000000000001)
+   end
+end
+
+function up2()
+	while _G.up2 == true do
+	 game:GetService("ReplicatedStorage").Remotes.Upgrade:FireServer("Accuraty")
+     wait(0.000000000000001)
+   end
+end
+
+function up3()
+	while _G.up3 == true do
+	 game:GetService("ReplicatedStorage").Remotes.Upgrade:FireServer("Walkspeed")
+     wait(0.000000000000001)
+   end
+end
+
 
 local MainTab = Window:MakeTab({
 	Name = "Main",
@@ -34,8 +61,21 @@ local MainTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+
+local EggTab = Window:MakeTab({
+	Name = "Egg",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local UpTab = Window:MakeTab({
+	Name = "Upgrade",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 MainTab:AddToggle({
-	Name = "Inf Cash",
+	Name = "Farm",
 	Default = false,
 	Callback = function(Value)
 		_G.farm = Value
@@ -52,12 +92,48 @@ MainTab:AddToggle({
 	end    
 })
 
-MainTab:AddToggle({
-	Name = "Auto Hatch Best Egg | Unlock The Last World First",
+EggTab:AddToggle({
+	Name = "Auto Hatch",
 	Default = false,
 	Callback = function(Value)
 		_G.egg = Value
         egg()
+	end    
+})
+
+UpTab:AddToggle({
+	Name = "Auto Upgrade Strength",
+	Default = false,
+	Callback = function(Value)
+		_G.up1 = Value
+        up1()
+	end    
+})
+
+UpTab:AddToggle({
+	Name = "Auto Upgrade Accuraty",
+	Default = false,
+	Callback = function(Value)
+		_G.up2 = Value
+        up2()
+	end    
+})
+
+UpTab:AddToggle({
+	Name = "Auto Upgrade Walkspeed",
+	Default = false,
+	Callback = function(Value)
+		_G.up3 = Value
+        up3()
+	end    
+})
+
+EggTab:AddDropdown({
+	Name = "Select",
+	Default = "Common Egg",
+	Options = {"Common Egg", "Desert Egg", "Iced Egg", "Tropical Egg", "Mush Egg", "Candy Egg", "Airport Egg", "Ocean Egg", "Magma Egg", "Bouncy Egg", "Stone Egg", "Angel Egg",},
+	Callback = function(Value)
+		getgenv().selectRebirth = Value
 	end    
 })
 
