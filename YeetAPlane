@@ -15,7 +15,7 @@ function Hub()
 
 	if game.PlaceId == 13780662126 then
 		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-		local Window = OrionLib:MakeWindow({Name = "BaconBoss | Yeet a Plane Simulator!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+		local Window = OrionLib:MakeWindow({Name = "BaconBoss Hub | Yeet a Plane Simulator!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 		
 		_G.farm = true
 		_G.rb = true
