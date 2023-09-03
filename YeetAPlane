@@ -28,7 +28,7 @@ function Hub()
 		
 		function farm()
 			  while _G.farm == true do
-			  game:GetService("ReplicatedStorage").Remotes.ThrowPlane:FireServer(Vector3.new(-425.31304931640625, 100.56306457519531, 108.01872253417969),100000000000000000000000000000000000000000000000000000000000000)
+			  game:GetService("ReplicatedStorage").Remotes.ThrowPlane:FireServer(Vector3.new(-425.31304931640625, 100.56306457519531, 108.01872253417969),100)
 			 wait(0.000000000000001)
 			end
 		end
